@@ -1,0 +1,12 @@
+.main-header {
+    font-size: 2.2rem;
+    color: rgb(2, 41, 90);
+    font-weight: bold;
+}
+.main-p {
+    color: rgb(150, 153, 171);
+    line-height: 1.5rem;
+}
+.main-hgroup {
+    margin-bottom: 1.5rem ;
+}

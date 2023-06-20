@@ -1,0 +1,49 @@
+.form {
+    display: flex;
+    flex-direction: column
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-input {
+    border-radius: .5rem;
+    border: 1px solid rgb(150, 153, 171);
+    height: 2rem;
+    padding: .3rem .5rem;
+    margin: .3rem 0;
+    color: rgb(150, 153, 171);
+}
+.form-submit {
+    align-self: end;
+    font-size: 16px;
+    padding: .5rem 1rem;
+    margin-top: 2rem;
+    background: rgb(2, 41, 90);
+    border: 1px solid rgb(2, 41, 90);
+    border-radius: .6rem;
+    color: white;
+    cursor: pointer;
+}
+.form-label {
+    color: rgb(2, 41, 90);
+    line-height: 1.5rem;
+}
+.form-btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.error-text-name, .error-text-email, .error-text-phone {
+    color:hsl(354, 84%, 57%);
+    font-weight: bold;
+    display: none;
+
+}
+.error-border {
+    border: 2px solid hsl(354, 84%, 57%);
+}
+.labels-container {
+    display: flex;
+    justify-content: space-between;
+}

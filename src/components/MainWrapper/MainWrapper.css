@@ -1,0 +1,7 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: space-around;
+    padding: 3rem 5rem;
+}
