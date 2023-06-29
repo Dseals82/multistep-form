@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState, useContext } from 'react';
-import { CardContext } from '../../context/CardContex';
+import { CardContext } from '../../context/CardContext';
 import Arcade from "../../images/icon-arcade.svg";
 import Advanced from "../../images/icon-advanced.svg";
 import Pro from "../../images/icon-pro.svg";
 
-const Card = ({cardHeading, cardPrice, cardImage, cardImgAlt}) => {
+const Card = () => {
     const {setSelectedCard, setCardPrice} = useContext(CardContext);
     const cardData = [
         { 
@@ -33,14 +33,10 @@ const Card = ({cardHeading, cardPrice, cardImage, cardImgAlt}) => {
             cardImgAlt:"Pro"
         },
     ]
-    const [cardInfo, setCardInfo] = useState({
-      cardType: '',
-      cardPrice: ''  
-    });
+
     const [newData, setNewData] = useState(cardData)
     
     const handleClick = (id) => {
-        console.log("id",id)
         const newCardData = [...cardData]
         newCardData.filter((card)=> {
             if(card.id === id){
@@ -53,11 +49,7 @@ const Card = ({cardHeading, cardPrice, cardImage, cardImgAlt}) => {
         })
         setNewData([...newCardData])
         const selectedCard = newCardData.filter((card) => card.id === id)[0]
-        // setCardInfo({...cardInfo, cardType: cardData.cardHeading, cardPrice: cardData.cardPrice})
-        // setCardInfo({...selectedCard[0]})
         const {cardHeading, cardPrice} = selectedCard;
-        console.log(newCardData )
-        console.log(cardHeading, cardPrice)
         setSelectedCard(cardHeading);
         setCardPrice(cardPrice);
     }

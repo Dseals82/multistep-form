@@ -7,7 +7,31 @@ import AppLayout from "../components/AppLayout/AppLayout";
 import MainWrapper from '../components/MainWrapper/MainWrapper';
 import AddonsOption from '../components/AddonsOption/AddonsOption';
 
+
 const AddOns = () => {
+   const addOnsData = [
+    {
+      id: 1,
+      heading: "Online service",
+      text: "Access to multiplayer games",
+      price: 10,
+      isChecked: false
+    },
+    {
+      id: 2,
+      heading: "Larger storage",
+      text: "Extra 1Tb of cloud save",
+      price: 20,
+      isChecked: false
+    },
+    {
+      id: 3,
+      heading: "Customizable profile",
+      text: "Custom them on your profile",
+      price: 20,
+      isChecked: false
+    }
+  ];
 
   return (
     <div className='add-ons'>
@@ -15,10 +39,8 @@ const AddOns = () => {
         <Sidebar/>
             <MainWrapper>
               <HeadingGroup heading="Pick add-Ons" text="Add-ons help enhance your gaming experience." />
-              <AddonsOption/>
-              <AddonsOption/>
-              <AddonsOption/>
-              <div class="form-btn-container">
+              <AddonsOption options={addOnsData} />
+              <div className="form-btn-container">
                 <Link to="/select-plan">
                 <Button className="form-submit go-back-2">Go Back</Button>
                 </Link> 

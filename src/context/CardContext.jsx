@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-// default value
+// default value for context
 export const CardContext = createContext({
     selectedCard: "",
     setSelectedCard: ()=> {},
@@ -10,7 +10,7 @@ export const CardContext = createContext({
     setToggleSelection: ()=> {},
 })
 
-//
+// CardProvider that wraps around children Components to provide the values/state
 export const CardProvider = ({children}) => {
     const [selectedCard, setSelectedCard] = useState("");
     const [cardPrice, setCardPrice] = useState(0);

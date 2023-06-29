@@ -19,11 +19,11 @@ const SelectPlan = () => {
           <Sidebar/>
               <MainWrapper>
                 <HeadingGroup heading="Select Your Plan" text="You have the option of monthly or yearly billing."/>
-                <div class="card-container">
+                <div className="card-container">
                   <Card />
                 </div>
                 <ToggleSection optionA="Montly" optionB="Yearly" />
-                <div class="form-btn-container">
+                <div className="form-btn-container">
                 <Link to="/">
                 <Button className="form-submit go-back-2">Go Back</Button>
                 </Link> 

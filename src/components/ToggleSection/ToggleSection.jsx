@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useContext } from 'react';
-import { CardContext } from '../../context/CardContex';
+import { CardContext } from '../../context/CardContext';
 import './ToggleSection.css';
 
 const ToggleSection = ({optionA, optionB}) => {

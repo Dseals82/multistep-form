@@ -5,11 +5,18 @@ import HeadingGroup from "../components/HeadingGroup/HeadingGroup";
 import Sidebar from "../components/Sidebar/Sidebar";
 import AppLayout from '../components/AppLayout/AppLayout';
 import MainWrapper from '../components/MainWrapper/MainWrapper';
-import { useContext } from 'react';
-import { CardContext } from '../context/CardContex';
+import { useState, useContext } from 'react';
+import { CardContext } from '../context/CardContext';
+import { AddonsContext } from '../context/AddonsContext';
 
 const Summary = () => {
+  // const [addonsTotal, setAddonsTotal] = useState(0);
+  const [overallTotal, setOveralTotal] = useState(0);
   const {cardPrice, toggleSelection} = useContext(CardContext)
+  const {addonsDisplay} = useContext(AddonsContext)
+  const addonsTotal = addonsDisplay.reduce((acc,curr)=>{
+    return acc + curr.price
+  },0)
   // const pagesData = [
   //   {
   //     plan: "Arcade",
@@ -44,6 +51,9 @@ const Summary = () => {
       }
     ]
   }
+  let total = cardPrice + addonsTotal;
+  // setOveralTotal(total)
+  console.log("testing: ", addonsTotal)
   return (
     <div className='summary'>
         <AppLayout>
@@ -53,9 +63,25 @@ const Summary = () => {
             <div className='summary-section'>
               <h1>This is Card info: {cardPrice}</h1>
               <h1>This is Toggle info: {toggleSelection}</h1>
+              <h1>Add ons</h1>:
+              <ul style={{listStyle:"none"}}>
+                {
+                  addonsDisplay.map((addon)=>{
+                    const {heading, price} = addon;
+                    console.log(price)
+                    return (
+                      <li>
+                        <h3>{heading}</h3>
+                        <p>{price}</p>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+              <h1>Total: {total}</h1>
             </div>
             
-            <div class="form-btn-container">
+            <div className="form-btn-container">
                 <Link to="/add-ons">
                 <Button className="form-submit go-back-2">Go Back</Button>
                 </Link> 
